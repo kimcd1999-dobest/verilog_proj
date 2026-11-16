@@ -6,6 +6,23 @@
 
 **연관 프로젝트** : STM32F411RE
 
+[1. 실습 환경 구축](#1-실습-환경-구축)
+
+[2. C언어 기초](#2-C언어-기초)
+
+<small>[Data Type](#data-type)</small>
+
+<small>[printf(), scanf()](#printf-scanf)</small>
+
+<small>[연산자](#연산자)</small>
+
+<small>[if ~ else](#if--else)</small>
+
+<small>[switch ~ case](#switch--case)</small>
+
+<small>[example](#example)</small>
+
+
 ## 1. 실습 환경 구축
 
 1. Visual Studio Community 2026 설치한다.
@@ -66,6 +83,7 @@ int main(void)
 
 ## 2. C언어 기초
 
+<a id="data-type"></a>
 <details>
 <summary>Data Type</summary>
 
@@ -197,6 +215,7 @@ int main(void)
 
 </details>
 
+<a id="printf-scanf"></a>
 <details>
 <summary>printf(), scanf()</summary>
 
@@ -238,6 +257,7 @@ int main(void)
 
 </details>
 
+<a id="연산자"></a>
 <details>
 <summary>연산자</summary>
 
@@ -272,6 +292,7 @@ int main(void)
 
 </details>
 
+<a id="if--else"></a>
 <details>
 <summary>if ~ else</summary>
 
@@ -297,6 +318,7 @@ int main(void)
 ```
 
 </details>
+<a id="switch--case"></a>
 <details>
 <summary>switch ~ case</summary>
 
@@ -334,6 +356,7 @@ int main(void)
 ```
 
 </details>
+<a id="example"></a>
 <details>
 <summary>example</summary>
 
