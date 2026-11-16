@@ -9,18 +9,12 @@
 [1. 실습 환경 구축](#1-실습-환경-구축)
 
 [2. C언어 기초](#2-C언어-기초)
-
-<small>[Data Type](#data-type)</small>
-
-<small>[printf(), scanf()](#printf-scanf)</small>
-
-<small>[연산자](#연산자)</small>
-
-<small>[if ~ else](#if--else)</small>
-
-<small>[switch ~ case](#switch--case)</small>
-
-<small>[example](#example)</small>
+  - <small>[Data Type](#data-type)</small>
+  - <small>[printf(), scanf()](#printf-scanf)</small>
+  - <small>[연산자](#연산자)</small>
+  - <small>[if ~ else](#if--else)</small>
+  - <small>[switch ~ case](#switch--case)</small>
+  - <small>[example](#example)</small>
 
 
 ## 1. 실습 환경 구축
