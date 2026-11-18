@@ -16,6 +16,8 @@
   - <small>[switch ~ case](#switch--case)</small>
   - <small>[example](#example(if&switch))</small>
   - <small>[loop](#loop)</small>
+  - <small>[function](#function)</small>
+  - <small>[structure](#structure)</small>
 
 
 ## 1. 실습 환경 구축
@@ -462,7 +464,7 @@ switch 예제 코드는 scanf 사용자 입력이 아닌 디버깅을 사용하�
 | 특징 | 조건 기반 반복 | 횟수 기반 반복 | 최소 1회 실행 |
 | 주 사용 상황 | 반복 횟수 미정 | 반복 횟수 지정 | 1회 실행 보장 |
 
-1. while
+1. **while**
 
 ```c   
 #include <stdio.h>
@@ -480,7 +482,7 @@ int main(void)
 }
 ```
 
-2. for
+2. **for**
 
 ```c   
 int main(void)
@@ -497,7 +499,7 @@ int main(void)
 }
 ```
 
-3. do ~ while
+3. **do ~ while**
 
 ```c  
 int main(void)
@@ -516,7 +518,142 @@ int main(void)
 ```
 
 </details>
+<a id="function"></a>
+<details>
+<summary>function</summary>
 
+1. main 함수가 아닌 다른 함수를 정의하여 사칙연산을 진행해 보았다.
+
+```c
+int sum(int x, int y){
+    int temp;
+    temp = x + y;
+    return temp;
+}
+
+int sub(int x, int y){
+    int temp;
+    temp = x - y;
+
+    if (temp >= 0) return temp;
+    else return -1;
+}
+
+int mul(void){
+    int temp, x, y;
+
+    printf("input1, input2 : ");
+    scanf_s("%d %d", &x, &y);
+
+    temp = x * y;
+    return temp;
+}
+
+int main(void){
+    int a = 10, b = 20;
+    int result1, result2, result3;
+
+    result1 = sum(a, b);
+    printf("sum : %d\n", result1);
+
+    result2 = sub(a, b);
+    if (sub(a,b) >=0)
+        printf("sub : %d\n", result2);
+    else
+        printf("sub(negative) : %d\n", result2);
+
+    result3 = mul();
+    printf("mul : %d\n", result3);
+}
+```
+
+만약 main 함수가 앞 줄에 보이길 원하면, 컴파일러가 함수를 인식할 수 있도록 만들어야 한다. (저장 공간 확보)
+
+```c
+int sum(int x, int y);
+```
+
+이렇게 먼저 함수를 선언한 뒤에 main 함수 뒤에 정의를 진행할 수 있다.
+
+2. 재귀함수 코드 실습을 진행한다.
+
+```c
+int all_sum(int count) {
+    if (count >= 11) {
+        return 0;
+    }
+
+    return count + all_sum(count + 1);
+}
+
+int main(void) {
+    int sum = all_sum(1);
+    printf("all_sum : %d\n", sum);
+
+    return 0;
+}
+```
+
+</details>
+<a id="structure"></a>
+<details>
+<summary>structure</summary>
+
+다음은 구조체 코드 실습을 진행한다.
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct profile
+{
+    char name[20];
+    int age;
+    double height;
+    char* intro;
+};
+
+int main(void)
+{
+    struct profile yuni;
+
+    strcpy_s(yuni.name, sizeof(yuni.name), "hayun"); // 이름 저장
+    yuni.age = 17; // 나이와 키 저장
+    yuni.height = 164.5;
+
+    yuni.intro = (char*)malloc(80);     // 자기소개를 저장할 메모리 동적 할당
+
+    //if (yuni.intro == NULL) {
+    //    printf("메모리 할당 실패\n");
+    //    return 1;
+    //}
+
+    printf("self intro : ");
+    gets(yuni.intro);     // 할당 공간에 자기소개 입력
+
+
+    //yuni.intro[strcspn(yuni.intro, "\n")] = '\0';     // 입력 문자열의 개행 문자 제거
+
+    printf("name : %s\n", yuni.name);     // 구조체 멤버 출력
+    printf("age : %d\n", yuni.age);
+    printf("height : %.1f\n", yuni.height);
+    printf("self intro : %s\n", yuni.intro);
+    free(yuni.intro);    // 동적 할당 영역 반환
+
+    return 0;
+}
+```
+
+*패딩 바이트(padding byte)란*
+- 구조체의 멤버 사이 또는 끝에 컴파일러가 자동으로 추가하는 여분의 메모리 공간이다.
+- CPU가 데이터를 효율적으로 처리하도록 메모리 정렬(Byte Alignment)을 맞추기 위해 사용한다.
+
+*특징*
+- 실제 구조체 멤버가 아니며 데이터를 저장하지 않음
+- 구조체 멤버의 선언 순서에 따라 크기가 달라질 수 있음
+- `sizeof()`로 패딩을 포함한 구조체 전체 크기를 확인할 수 있음
+
+**핵심:** 멤버의 선언 순서를 조율하여 최소의 메모리 할당으로 유도한다.
 
 ---
 
