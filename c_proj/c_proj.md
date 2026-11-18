@@ -14,7 +14,8 @@
   - <small>[연산자](#연산자)</small>
   - <small>[if ~ else](#if--else)</small>
   - <small>[switch ~ case](#switch--case)</small>
-  - <small>[example](#example)</small>
+  - <small>[example](#example(if&switch))</small>
+  - <small>[loop](#loop)</small>
 
 
 ## 1. 실습 환경 구축
@@ -286,6 +287,7 @@ int main(void)
 
 </details>
 
+---
 <a id="if--else"></a>
 <details>
 <summary>if ~ else</summary>
@@ -350,9 +352,9 @@ int main(void)
 ```
 
 </details>
-<a id="example"></a>
+<a id="example(if&switch)"></a>
 <details>
-<summary>example</summary>
+<summary>example(if&switch)</summary>
 
 if ~ else와 switch ~ case문을 비교한다.
 
@@ -447,6 +449,73 @@ switch 예제 코드는 scanf 사용자 입력이 아닌 디버깅을 사용하�
 
 </details>
 
+---
+
+<a id="loop"></a>
+<details>
+<summary>loop</summary>
+
+| 구분 | while | for | do~while |
+|:---:|:---:|:---:|:---:|
+| 조건 검사 | 실행 전 | 실행 전 | 실행 후 |
+| 최소 실행 | 0회 | 0회 | 1회 |
+| 특징 | 조건 기반 반복 | 횟수 기반 반복 | 최소 1회 실행 |
+| 주 사용 상황 | 반복 횟수 미정 | 반복 횟수 지정 | 1회 실행 보장 |
+
+1. while
+
+```c   
+#include <stdio.h>
+
+int main(void)
+{
+	int a = 1;
+
+	while (a < 10) {
+		a = a * 2;
+		printf("a : %d\n", a);
+	}
+
+	return 0;
+}
+```
+
+2. for
+
+```c   
+int main(void)
+{
+	int a = 1;
+	int i;
+
+	for (i = 0; i < 3; i++) {
+		a = a * 2;
+		printf("a : %d\n", a);
+	}
+
+	return 0;
+}
+```
+
+3. do ~ while
+
+```c  
+int main(void)
+{
+	int a = 1;
+	int i = 0;
+
+	do {
+		a = a * 2;
+		printf("a : %d\n", a);
+		i++;
+	} while (i < 3);
+
+	return 0;
+}
+```
+
+</details>
 
 
 ---
