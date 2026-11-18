@@ -287,7 +287,7 @@ int main(void)
 
 </details>
 
----
+<hr width="30%">
 <a id="if--else"></a>
 <details>
 <summary>if ~ else</summary>
@@ -449,7 +449,7 @@ switch 예제 코드는 scanf 사용자 입력이 아닌 디버깅을 사용하�
 
 </details>
 
----
+<hr width="30%">
 
 <a id="loop"></a>
 <details>
