@@ -6,6 +6,10 @@
 
 **연관 프로젝트** : STM32F411RE
 
+---
+
+**목차**
+
 [1. 실습 환경 구축](#1-실습-환경-구축)
 
 [2. C언어 기초](#2-C언어-기초)
@@ -18,7 +22,8 @@
   - <small>[loop](#loop)</small>
   - <small>[function](#function)</small>
   - <small>[structure](#structure)</small>
-
+  
+---
 
 ## 1. 실습 환경 구축
 
